@@ -1,1 +1,67 @@
 
+安装eclipse(ubuntu软件园里就有,安装过程这里就不作说明了) 
+然后配置 Eclipse 
+用 eclipse 编译 C/C++的插件 
+sudo apt-get install eclipse-cdt 
+
+把终端Terminal添加到右键菜单中 
+sudo apt-get install nautilus-open-terminal 
+
+安装gcc 
+sudo apt-get install build-essential 
+
+安装cmake 
+sudo apt-get install cmake 
+
+安装tbb 
+sudo apt-get install libtbb-dev 
+
+安装依赖关系
+sudo apt-get  install ruby ruby-dev
+sudo apt-get  install ruby1.9.3 
+sudo apt-get  install libboost-dev libboost-all-dev 
+sudo apt-get  install  libfreetype6-dev 
+sudo apt-get  install  libdevil-dev 
+sudo apt-get  install  freeglut3-dev 
+sudo apt-get  install  libgl1-mesa-dev 
+sudo apt-get  install libglu1-mesa-dev 
+sudo apt-get  install libsdl1.2-dev 
+
+安装svn 
+sudo apt-get install subversion 
+
+安装多线程的ODE 
+./configure --enable-shared --enable-malloc LIBS=-lX11 
+make
+sudo make install
+
+然后从svn上check最新的server源代码 
+svn co https://simspark.svn.sourceforge.net/svnroot/simspark/trunk 
+simspark 
+安装过程和官方wiki上介绍的一样
+cd simspark/spark 
+cmake .. 
+make 
+sudo make install 
+
+cd ../../rcssserver3d 
+cmake ..
+make
+make install
+使用如下命令启动server 
+rcsoccersim3d 
+
+安装完成后,运行命令:rcsoccersim3d,如果发生错误,则还需 
+要建立ode的符号链接才能正常运行server 
+
+mkdir -p /usr/local/share/simspark/Contents/plugins/ 
+
+ln -s /usr/local/lib/simspark/o 
+deimps.so/usr/local/share/simspark/Contents/plugins/(这里 
+没有分行,而是一个目录) 
+
+ln -s /usr/local/lib/libode.so.1 /usr/lib/ 
+
+使用如下命令启动server 
+rcsoccersim3d 
+Written by i.V.E(ccy) 
