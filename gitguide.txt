@@ -1,6 +1,0 @@
-usr:1605547189@qq.com
-passwd:xyf231667
-git clone https://github.com/XYF1/MiracleUS.git
-git add jiagou
-git commit jiagou -m "jiagouse=hejijfoahf"
-git push
